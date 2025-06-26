@@ -43,6 +43,7 @@ Ejemplos:
 """
 class Module(models.Model):
     url = models.CharField(verbose_name='Url', max_length=100, unique=True)
+    url_name = models.CharField(max_length=100, blank=True, null=True)  # Nuevo campo
     name = models.CharField(verbose_name='Nombre', max_length=100)
     menu = models.ForeignKey(Menu, on_delete=models.PROTECT, verbose_name='Menu', related_name='modules')
     description = models.CharField(verbose_name='Descripción', max_length=200, null=True, blank=True)
